@@ -1,0 +1,21 @@
+<!-- การสืบทอด template -->
+{% extends "layout.html"%}
+
+<!-- พื้นที่ในการ Code แยกกันแต่ละหน้า -->
+{% block content %}
+
+    <h1>Show Member</h1>
+        <p>Member : {{ data }} people</p>
+        <p>{{mydata}}</p>
+        <p>{{mydata.name}}</p>
+
+        <!-- การใช้ Loop -->
+        <h1>Show Admin list</h1>
+        <ul>
+        {% for admin in list_username%}
+            <li>Hello {{admin}}</li>
+
+        {% endfor %}
+        </ul>  
+
+{% endblock %}

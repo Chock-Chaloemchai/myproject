@@ -1,0 +1,39 @@
+<!-- การสืบทอด template -->
+{% extends "layout.html"%}
+
+<!-- พื้นที่ในการ Code แยกกันแต่ละหน้า -->
+{% block content %}
+
+<!-- <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/register_member">Register Member</a></li>
+        <li><a href="/show_member">Show member</a></li>
+    </ul> -->
+<h1 align="center" class="mt-3">Add User</h1>
+
+
+<div class="container mb-3">
+
+    <form action="{{url_for('add_user')}}" method="post">
+        <div class="from-group ">
+            <label>Firstname</label>
+            <input type="text" class="form-control" name="fname">
+        </div>
+        <div class="from-group ">
+            <label>Lastname</label>
+            <input type="text" class="form-control" name="lname"> 
+        </div>
+        <div class="from-group ">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username">
+        </div>
+        
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+    <div class=" mt-3">
+        <a href="{{url_for('data')}}" class="btn btn-secondary">Member in database</a>
+    </div>
+
+</div>
+
+{% endblock %}

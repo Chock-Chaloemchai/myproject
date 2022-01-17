@@ -1,0 +1,23 @@
+<!-- การสืบทอด template -->
+{% extends "layout.html"%}
+
+<!-- พื้นที่ในการ Code แยกกันแต่ละหน้า -->
+{% block content %}
+
+<h1 align="center">PROJECT EZ</h1>
+<a href="{{url_for('static',filename='pengiun.jpg')}}" align="center">Click to see Pengiun</a>
+
+<!-- การใช้ if else -->
+{% if username == "AdminChock" %}
+<h2 align="center">ยินดีต้อนรับ {{username}} คุณคือ Admin</h2>
+{% else %}
+<h2 align="center">ยินดีต้อนรับ {{username}} คุณคือ member</h2>
+{% endif %}
+
+<!-- การใช้รูปในเครื่อง -->
+<img src="../static/1154657.jpg">
+<!-- การใช้รูปจาก url -->
+<img  src="http://2.bp.blogspot.com/-o2zYglr3eYo/T9_tXE0VxgI/AAAAAAAAADA/GxT5M4kvbXI/s1600/article-1239619-07BB1435000005DC-40_964x464.jpg"
+    alt="">
+
+{% endblock %}

@@ -1,0 +1,38 @@
+<!-- การสืบทอด template -->
+{% extends "layout.html"%}
+
+<!-- พื้นที่ในการ Code แยกกันแต่ละหน้า -->
+{% block content %}
+
+<h1 align="center">Data in database</h1>
+<div class="container">
+    <table class="table ">
+        <thead> 
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Username</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for row in data %}
+            <td>{{row.0}}</td>
+            <td>{{row.1}}</td>
+            <td>{{row.2}}</td>
+            <td>{{row.3}}</td>
+            <td>
+                <a href="#" class="btn btn-warning btn-xs" data-toggle="modal" data-target="">Edit</a>
+                <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{{url_for('test_add_user')}}" class="btn btn-primary">Add member</a>
+</div>
+
+{% endblock %}

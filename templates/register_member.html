@@ -1,0 +1,36 @@
+<!-- การสืบทอด template -->
+{% extends "layout.html"%}
+
+<!-- พื้นที่ในการ Code แยกกันแต่ละหน้า -->
+{% block content %}
+
+<!-- <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/register_member">Register Member</a></li>
+        <li><a href="/show_member">Show member</a></li>
+    </ul> -->
+<h1 align="center">Register member</h1>
+
+
+<div class="container mb-3">
+
+    <form action="{{url_for('add_user_model')}}" method="post">
+        <div class="from-group ">
+            <label>Model name</label>
+            <input type="text" class="form-control" name="model_name">
+            <div class="form-text">Enter the name model you want to create. </div>
+        </div>
+        <div class="from-group">
+            <label>Remark</label>
+            <textarea name="remark" id="" class="form-control" cols="30" rows="10"></textarea>
+            <div class="form-text">The reason you want to create. </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div class=" mt-3">
+        <a href="{{url_for('data_101')}}" class="btn btn-secondary">data in server101</a>
+    </div>
+
+</div>
+
+{% endblock %}

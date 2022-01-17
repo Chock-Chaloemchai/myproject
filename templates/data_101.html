@@ -1,0 +1,32 @@
+<!-- การสืบทอด template -->
+{% extends "layout.html"%}
+
+<!-- พื้นที่ในการ Code แยกกันแต่ละหน้า -->
+{% block content %}
+
+<h1 align="center">Data in Server 101</h1>
+<div class="container">
+    <table class="table ">
+        <thead> 
+          <tr>
+            <th scope="col">MemberID</th>
+            <th scope="col">EmailAdd</th>
+            <th scope="col">Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for row in data %}
+            <td>{{row.0}}</td>
+            <td>{{row.1}}</td>
+            <td>{{row.4}}</td>
+          
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{{url_for('register_member')}}" class="btn btn-primary">Add member</a>
+</div>
+
+{% endblock %}
